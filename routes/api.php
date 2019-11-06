@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    dd(111);
     return $request->user();
 });
 

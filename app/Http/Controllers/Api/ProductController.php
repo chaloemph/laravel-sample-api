@@ -23,9 +23,13 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        
+        $newProduct = new Product();
+        $newProduct->product_name = $request->product_name;
+        $newProduct->product_description = $request->product_description;
+        $newProduct->save();
+        return response()->json($newProduct, 200);
     }
 
     /**
